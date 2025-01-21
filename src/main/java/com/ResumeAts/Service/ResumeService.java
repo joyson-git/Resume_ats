@@ -1,5 +1,7 @@
 package com.ResumeAts.Service;
 
+
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -7,18 +9,13 @@ import java.io.InputStream;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ResumeAts.Repository.ResumeRepository;
 import com.ResumeAts.entity.Resume;
 
 @Service
 public class ResumeService {
-
-    @Autowired
-    private ResumeRepository resumeRepository;
 
     public Resume extractTextFromPdf(MultipartFile file) throws IOException {
         // Convert MultipartFile to File
@@ -43,6 +40,6 @@ public class ResumeService {
 
         Resume resume = new Resume();
         resume.setText(text);
-        return resumeRepository.save(resume);
+        return resume;
     }
 }

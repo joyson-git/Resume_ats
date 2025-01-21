@@ -1,21 +1,24 @@
 package com.ResumeAts.Service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import com.ResumeAts.Repository.JobDescriptionRepository;
+import org.springframework.stereotype.Service;
 import com.ResumeAts.entity.JobDescription;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class JobDescriptionService {
-
-    @Autowired
-    private JobDescriptionRepository jobDescriptionRepository;
+    private final List<JobDescription> jobDescriptions = new ArrayList<>();
 
     public JobDescription saveJobDescription(String description) {
         JobDescription jobDescription = new JobDescription();
+        jobDescription.setId((long) (jobDescriptions.size() + 1));
         jobDescription.setDescription(description);
-        return jobDescriptionRepository.save(jobDescription);
+        jobDescriptions.add(jobDescription);
+        return jobDescription;
+    }
+
+    public List<JobDescription> getAllJobDescriptions() {
+        return jobDescriptions;
     }
 }
-
