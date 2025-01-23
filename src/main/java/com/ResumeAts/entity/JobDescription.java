@@ -5,23 +5,28 @@ package com.ResumeAts.entity;
 public class JobDescription {
 
    
-    private Long id;
+  
     private String description;
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public JobDescription() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public JobDescription(String description) {
+		super();
+		this.description = description;
+	}
+
+   
+
+   
 }

@@ -1,28 +1,33 @@
 package com.ResumeAts.entity;
 
 
-
-
 public class Resume {
+   
 
+ 
+    @Override
+	public String toString() {
+		return "Resume [pdf=" + pdf + "]";
+	}
 
-    private Long id;
-    private String text;
+	private String pdf;
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
+	public String getPdf() {
+		return pdf;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setPdf(String pdf) {
+		this.pdf = pdf;
+	}
 
-    public String getText() {
-        return text;
-    }
+	public Resume(String pdf) {
+		super();
+		this.pdf = pdf;
+	}
 
-    public void setText(String text) {
-        this.text = text;
-    }
+	public Resume() {
+		super();
+		// TODO Auto-generated constructor stub
+	} 
+    
 }

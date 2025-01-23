@@ -12,13 +12,13 @@ public class JobDescriptionService {
 
     public JobDescription saveJobDescription(String description) {
         JobDescription jobDescription = new JobDescription();
-        jobDescription.setId((long) (jobDescriptions.size() + 1));
         jobDescription.setDescription(description);
         jobDescriptions.add(jobDescription);
         return jobDescription;
     }
-
+/*
     public List<JobDescription> getAllJobDescriptions() {
         return jobDescriptions;
     }
+    */
 }
