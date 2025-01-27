@@ -8,6 +8,9 @@ import java.util.List;
 
 @Service
 public class JobDescriptionService {
+	
+	private JobDescription latestJobDescription;
+
     private final List<JobDescription> jobDescriptions = new ArrayList<>();
 
     public JobDescription saveJobDescription(String description) {
@@ -21,4 +24,9 @@ public class JobDescriptionService {
         return jobDescriptions;
     }
     */
+    
+
+    public JobDescription getLatestJobDescription() {
+        return latestJobDescription;
+    }
 }
